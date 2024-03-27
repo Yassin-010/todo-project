@@ -20,7 +20,7 @@ if (!age || age <= 0) {
 
 }
 
-var skipMessage = confirm("Do you want to show the welcoming message?");
+var skipMessage = confirm("Do you want to skip the welcoming message?");
 
 
 var title = "";
@@ -29,8 +29,11 @@ if (gender === "male") {
 } else if (gender === "female") {
     title = "Ms";
 }
+
 var message = title ? "Welcome, " + title + " " + userName : "Welcome, " + userName;
-alert(message);
+
+if (!skipMessage)
+    alert(message);
 
 // Get necessary elements
 const taskInput = document.querySelector('.task-input');
